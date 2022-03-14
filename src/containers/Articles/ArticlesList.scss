@@ -1,0 +1,165 @@
+@import 'src/assets/css/_colors.scss';
+@import 'src/assets/css/_mixins.scss';
+.library-student {
+    padding: 40px;
+    padding-top: 20px;
+    .pagination-filter-button{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .filter-library-student-button {
+      cursor: pointer;
+      border-radius: 100px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      padding: 20px;
+      margin: 0 20px;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      height: 30px;
+      max-width: 200px;
+      background-color:       lighten($color-primary-blue, 5%) ;
+      color: white;
+      img{
+        height: 25px;
+      }
+      
+      @include small-laptop {
+        font-size: 1rem;
+      }
+    
+    }
+    .library-student-cards {
+      display: grid;
+      grid-template-rows: max-content;
+      justify-content: space-evenly;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 2rem;
+      padding: 1rem 1rem 0 1rem;
+      
+      @include small-laptop {
+        grid-area: content;
+      }
+      @media screen and (max-width: 1024px) {
+        padding: 0 2rem;
+      }
+      .item_card{
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        img{
+          height: 120px;
+          object-fit: contain;
+  
+        }
+        p{
+          text-align: center;
+        }
+      }
+      .news-item {
+        text-decoration: none;
+        position: relative;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px !important; */
+        p {
+          color: $color-primary-blue;
+        }
+        .news-buttons {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          top: 5px;
+          right: 5px;
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          .button {
+            background-color: #fff;
+            box-shadow: 3px 3px 3.5px -1px #585858, -1px -1px 3px 1px #dcdcdc;
+            color: $color-primary-blue;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+              margin: 0;
+              height: 90%;
+              width: 90%;
+            }
+          }
+        }
+        .news-chips {
+          position: absolute;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+          top: 5px;
+          left: 5px;
+          right: 15%;
+          .MuiChip-root {
+            height: auto;
+          }
+          .topic {
+            background-color: $color-chip-blue-background;
+            span {
+              color: $color-chip-blue-text;
+            }
+          }
+          .age-group {
+            background-color: $color-chip-magenta-background;
+            span {
+              color: $color-chip-magenta-text;
+            }
+          }
+          .level {
+            background-color: $color-chip-orange-background;
+            span {
+              color: $color-chip-orange-text;
+            }
+          }
+          .MuiChip-root {
+            color: #fff;
+            box-shadow: 3px 3px 3.5px -1px #585858, -1px -1px 7px 1px #dcdcdc;
+            .MuiChip-label {
+              font-size: 0.6rem;
+              font-weight: 600;
+              padding: 5px;
+              max-width: 25ch;
+            }
+          }
+        }
+        .news-item-image {
+          height: 180px;
+          width: 100%;
+          object-fit: cover;
+        }
+        .news-item-topic,
+        .news-item-title {
+          margin: 5px 0;
+        }
+        .news-item-topic {
+          color: $color-primary-blue;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          font-weight: 400;
+        }
+        .news-item-title {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+        .MuiCardActionArea-root {
+          .MuiCardContent-root {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+  

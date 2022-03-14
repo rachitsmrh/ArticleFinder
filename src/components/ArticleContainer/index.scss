@@ -1,0 +1,10 @@
+.yskool-body-container {
+    margin-left: 210px;
+    margin-right: 88px;
+    margin: 24px 88px 0 210px;
+    height: auto;
+    @media screen and (max-width: 800px) {
+      margin: 64px 10px 0 10px;
+    }
+  }
+  

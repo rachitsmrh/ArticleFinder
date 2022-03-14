@@ -1,0 +1,27 @@
+@mixin large-mobile {
+    @media (min-width: 421px) {
+      @content;
+    }
+  }
+  @mixin tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin small-laptop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @mixin l-laptop {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+  
+  @mixin fhd-laptop {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+  

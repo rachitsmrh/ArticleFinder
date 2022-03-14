@@ -1,0 +1,128 @@
+@import 'src/assets/css/_colors.scss';
+@import 'src/assets/css/_mixins.scss';
+
+.news-item {
+  text-decoration: none;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px !important; */
+  p {
+    color: $color-primary-blue;
+  }
+  .news-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    .button {
+      background-color: #fff;
+      box-shadow: 3px 3px 3.5px -1px #585858, -1px -1px 3px 1px #dcdcdc;
+      color: $color-primary-blue;
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        margin: 0;
+        height: 90%;
+        width: 90%;
+      }
+    }
+  }
+  .news-chips-student {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    top: 5px;
+    left: 5px;
+    right: 15%;
+    .MuiChip-root {
+      height: auto;
+    }
+    .topic-student {
+        background-color: $color-chip-blue-background;
+        span {
+          color: $color-chip-blue-text;
+        }
+      }
+    .topic {
+      background-color: $color-chip-blue-background;
+      span {
+        color: $color-chip-blue-text;
+      }
+    }
+    .age-group {
+      background-color: $color-chip-magenta-background;
+      span {
+        color: $color-chip-magenta-text;
+      }
+    }
+    .level {
+      background-color: $color-chip-orange-background;
+      span {
+        color: $color-chip-orange-text;
+      }
+    }
+    .MuiChip-root {
+      color: #fff;
+      box-shadow: 3px 3px 3.5px -1px #585858, -1px -1px 7px 1px #dcdcdc;
+      .MuiChip-label {
+        font-size: 0.6rem;
+        font-weight: 600;
+        padding: 5px;
+        max-width: 25ch;
+      }
+    }
+  }
+  .news-item-image {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .news-item-topic,
+  .news-item-title-student {
+    margin: 5px 0;
+  }
+  .news-item-topic {
+    color: $color-primary-blue;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .news-item-title-student {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .MuiCardActionArea-root {
+    .MuiCardContent-root {
+      padding: 5px;
+    }
+  }
+}
+.simulation-dsfe-card {
+  position: relative;
+  .button {
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    top: 5px;
+    right: 5px;
+    gap: 5px;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3.5px -1px #585858, -1px -1px 3px 1px #dcdcdc;
+    background-color: #22427d;
+    height: 25px;
+    width: 25px;
+  }
+}
