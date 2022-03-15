@@ -53,7 +53,7 @@ const News = (props) => {
 
       case "ordered_list":
         return (
-          <div>
+          <div className="ol">
             <h3>{prop.value.heading}</h3>
 
             <ol>
@@ -65,7 +65,7 @@ const News = (props) => {
         );
       case "unordered_list":
         return (
-          <div>
+          <div className="unol">
             <h3>{prop.value.heading}</h3>
 
             <ul>
@@ -86,24 +86,7 @@ const News = (props) => {
       <div className="main1">
         {articleData &&
           articleData.map((e, index) => <SwitchCase value={e} key={index} />)}
-        {props.vocab !== "true" ? (
-          <div>
-            {article.vocabulary.length > 0 && <h3>Vocabulary</h3>}
-            {article.vocabulary.length > 0 && (
-              <div className="vocab">
-                {article.vocabulary.length > 0 &&
-                  article.vocabulary.map((e, index) => (
-                    <div key={index} className="voc">
-                      <span className="standard ">{e.word} :</span> &nbsp;
-                      <span>{e.meaning}</span> &nbsp;
-                    </div>
-                  ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          ""
-        )}
+        {props.vocab !== "true" ? <div></div> : ""}
         {props.children}
       </div>
     </>

@@ -117,8 +117,44 @@
     ]
   },{
     "id":"80",
-    "topic": "Microservices",
-    "title": "Where does our food come from – why should we care?"
+    "topic": "Development",
+    "title": "Build A Text-To-Speech App Using Client-Side JavaScript",
+    "articleData":[
+      {
+        "role":"title",
+        "text":"Build A Text-To-Speech App Using Client-Side JavaScript"
+      },
+      {
+        "role":"paragraph",
+        "text":"A Fusion of OCR Technology (Tesseract.js) & Web Speech API. Full Code Implementation included."
+      },
+      {
+        "role": "image",
+        "source": "Amazon",
+        "url": "https://miro.medium.com/max/875/1*ZYJDSDmKSzqp19W9CTnPVA.png",
+        "author": "Somebody"
+      },
+      {
+        "role":"paragraph",
+        "text":"In today’s information age, impacts of digital transformations are present across varying industries and sectors. Following the onset of a Global Pandemic, this has accelerated several domains such as Healthcare and Finance to recognise the importance of data and the need for digital tools to support these ongoing paradigm shifts."
+      },
+      {
+        "role":"heading2",
+        "text":"OCR (Optical Character Recognition) Technology"
+      },
+      {
+        "role":"paragraph",
+        "text":"In particular, OCR technology has been a gamechanger in driving this digital age to reinforce data-fueled professions such as Data Science (AI & ML) and Data Analytics."
+      },
+      {
+        "role":"paragraph",
+        "text":"Most notably, the capability of OCR technology to extract textual content in images eliminates the manually intensive need to re-type the text, effectively saving overhead costs (time+manpower)."
+      }
+    
+
+
+
+    ]
   },
   {
     "id":"81",
@@ -132,8 +168,88 @@
   },
   {
     "id":"83",
-    "topic": "Cloud computing",
-    "title": "Where does our food come from – why should we care?"
+    "topic": "Microservices",
+    "title": "What are microservices?",
+    "brief":"Microservices are an architectural and organizational approach to software development where software is composed of small independent services that communicate over well-defined APIs. These services are owned by small, self-contained teams.Microservices architectures make applications easier to scale and faster to develop, enabling innovation and accelerating time-to-market for new features.",
+    
+    "articleData": [
+      {
+        "role": "title",
+        "text": "What are microservices?"
+      },
+      {
+        "role": "heading2",
+        "text": "Overview"
+      },
+      {
+        "role": "paragraph",
+        "text": "Microservices are an architectural approach to building applications. As an architectural framework, microservices are distributed and loosely coupled, so one team’s changes won’t break the entire app. The benefit to using microservices is that development teams are able to rapidly build new components of apps to meet changing business needs"
+      },
+      {
+        "role": "image",
+        "source": "Amazon",
+        "url": "https://d1.awsstatic.com/Developer%20Marketing/containers/monolith_1-monolith-microservices.70b547e30e30b013051d58a93a6e35e77408a2a8.png",
+        "author": "Somebody"
+      },
+      {
+        "role": "heading2",
+        "text": "A way to build apps, optimized for DevOps and CI/CD"
+      },
+      {
+        "role": "paragraph",
+        "text": "What sets a microservices architecture apart from more traditional, monolithic approaches is how it breaks an app down into its core functions. Each function is called a service, and can be built and deployed independently, meaning individual services can function (and fail) without negatively affecting the others. This helps you to embrace the technology side of DevOps and make constant iteration and delivery (CI/CD) more seamless and achievable."
+      },
+      {
+        "role": "paragraph",
+        "text": "Think of your last visit to an online retailer. You might have used the site’s search bar to browse products. That search represents a service. Maybe you also saw recommendations for related products—recommendations pulled from a database of shopper preferences. That’s also a service. Did you add an item to an online cart? You guessed it, another service."
+      },
+      {
+        "role": "paragraph",
+        "text": "So, a microservice is a core function of an application and it runs independent of other services, but a microservices architecture is about more than just the loose coupling of an app’s core functions—it’s about restructuring development teams and interservice communication in a way that prepares for inevitable failures, future scalability, and new feature integration."
+      },
+      {
+        "role": "heading2",
+        "text": "From SOA to microservices"
+      },
+      {
+        "role": "paragraph",
+        "text": "What's the difference? Microservices can communicate with each other, usually statelessly, so apps built in this way can be more fault tolerant, less reliant on a single ESB. This also allows dev teams to choose their own tools, since microservices can communicate through language-agnostic application programming interfaces (APIs)."
+      },
+      {
+        "role": "paragraph",
+        "text": "Given the history of SOA, microservices are not actually all that new of an idea. However, microservices have become more viable thanks to advancements in containerization technologies. With Linux containers, you’re now able to run multiple parts of an app independently, on the same hardware, with much greater control over their individual pieces and life cycles. Along with APIs and DevOps teams, containerized microservices are the foundation for cloud-native applications."
+      },
+      {
+        "role": "image",
+        "source": "Amazon",
+        "url": "https://spring.io/images/diagram-microservices-dark-4a2e5817aac093437f4f3b3a5be8be88.svg",
+        "author": "Somebody"
+      },
+      {
+        "role": "heading2",
+        "text": "And the challenges?"
+      },
+      {
+        "role": "paragraph",
+        "text": "If your organization is thinking about shifting to a microservices architecture, expect to change the way people work, not just the apps. Organizational and cultural changes are identified as challenges in part because each team will have its own deployment cadence and will be responsible for a unique service with its own set of customers. Those may not be typical developer concerns, but they will be essential to a successful microservices architecture."
+      },
+      {
+        "role": "paragraph",
+        "text": "Beyond culture and process, complexity and efficiency are two major challenges of a microservice-based architecture. John Frizelle, platform architect for Red Hat Mobile, laid out these eight challenge categories in his 2017 talk at Red Hat Summit:"
+      },
+      {
+        "role": "ordered_list",
+        "heading": "",
+        "points": ["You have to spend time identifying dependencies between your services. Be aware that completing one build might trigger several other builds, due to those dependencies. You also need to consider the effects that microservices have on your data.","Remote debugging through your local integrated development environment (IDE) isn’t an option and it won’t work across dozens or hundreds of services. Unfortunately there’s no single answer to how to debug at this time."]
+       
+      },
+      {
+        "role":"unordered_list",
+        "heading":"Potential Use-Cases",
+        "points":["Data Entry For Business Documents","Aids for the Visually Impaired","Converting scanned documents to machine-readable text for data processing"]
+
+      }
+    ]
     
   }
   ]

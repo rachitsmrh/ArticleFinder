@@ -1,14 +1,12 @@
-/* eslint-disable no-loop-func */
-/* eslint-disable no-plusplus */
-/* eslint-disable prefer-destructuring */
 import React, { useEffect, useState } from "react";
 import data from "../../components/data/Articles.json";
 
-// import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // import Button from 'components/atoms/Button';
 import Article from "../../components/Article";
 import ArticleContainer from "../../components/ArticleContainer";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 import "./ShowArticle.scss";
 import { useParams } from "react-router";
@@ -42,6 +40,11 @@ const ShowArticle = (props) => {
             <div className="news-library-student">
               <div className="static-library-student"></div>
               <div className="bcg-library-student target">
+                <div className="static1">
+                  <Link to={`/articles`} className="action go-back">
+                    <ArrowBackIcon />
+                  </Link>
+                </div>
                 <div className="brief">
                   <h3>Brief</h3>
                   <p className="paragraph">{article.brief}</p>

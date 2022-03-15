@@ -2,11 +2,13 @@
 @import 'src/assets/css/_mixins.scss';
 .library-student {
     padding: 40px;
-    padding-top: 20px;
     .pagination-filter-button{
       display: flex;
       align-items: center;
       justify-content: space-around;
+    }
+    .main-heading{
+      margin: 20px;
     }
     .filter-library-student-button {
       cursor: pointer;
