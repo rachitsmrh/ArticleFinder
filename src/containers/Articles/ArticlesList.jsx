@@ -14,7 +14,7 @@ const ArticlesList = () => {
   console.log(articles);
   return (
     <div className="library-student">
-      ArticlesList
+      <h2 className="main-heading">Search Articles</h2>
       <div className="library-student-cards">
         {articles.length > 0 &&
           articles.slice().map((n, i) => {
