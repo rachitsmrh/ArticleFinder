@@ -6,18 +6,18 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import CardArticle from "./components/Cards";
 import ArticlesList from "./containers/Articles/ArticlesList";
 import ShowArticle from "./containers/ArticleView/ShowArticle";
+import Home from "./containers/Home/Home";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/articles/:id" element={<ShowArticle />} />
           <Route exact path="/articles" element={<ArticlesList />} />
-          <Route path=":id" element={<ShowArticle />} />
         </Routes>
       </div>
     </Router>
