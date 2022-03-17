@@ -1,0 +1,54 @@
+@import 'src/assets/css/_colors.scss';
+.home__screen {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  .home__screen__container {
+    max-width: 70rem;
+    margin: 1rem auto;
+    padding: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+    .home__image__container {
+      display: flex;
+      align-items: center;
+      
+      .home__image{
+        img{
+        width: 500px;
+        }
+      }
+      .image-title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
+    }
+    .home__content__container {
+      width: 35%;
+       display: flex;
+       align-items: center;
+     
+   
+      .home__heading {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-align: center;
+        h1{
+          font-size: 30px;
+        }
+        p {
+         font-size: 30px;
+          color: $color-primary-blue;
+        }
+      }
+      
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
+    }
+  }
+}
