@@ -9,11 +9,13 @@ import {
 import ArticlesList from "./containers/Articles/ArticlesList";
 import ShowArticle from "./containers/ArticleView/ShowArticle";
 import Home from "./containers/Home/Home";
+import Navbar from "./containers/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles/:id" element={<ShowArticle />} />
