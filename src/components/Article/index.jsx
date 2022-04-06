@@ -13,9 +13,7 @@ import Image from "./components/Image";
 
 const News = (props) => {
   const article = props.news;
-  const {
-    news: { articleData },
-  } = props;
+
   // const id = props.match.params.id;
   const SwitchCase = (prop) => {
     switch (prop.value.role) {
@@ -84,8 +82,8 @@ const News = (props) => {
   return (
     <>
       <div className="main1">
-        {articleData &&
-          articleData.map((e, index) => <SwitchCase value={e} key={index} />)}
+        {article &&
+          article.map((e, index) => <SwitchCase value={e} key={index} />)}
         {props.vocab !== "true" ? <div></div> : ""}
         {props.children}
       </div>

@@ -11,6 +11,8 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 import "./ShowArticle.scss";
 import { useParams } from "react-router";
+import { fetchArticle, clearNewsArticle } from "../Articles/slice";
+import { useSelector, useDispatch } from "react-redux";
 
 // import data from 'containers/News/components/news.json';
 
@@ -22,13 +24,27 @@ import { useParams } from "react-router";
 // import ArticleTable from './components/ArticleTable';
 
 const ShowArticle = (props) => {
-  console.log("a");
-  console.log(props.match);
+  const article = useSelector((store) => store.articles.article);
+
+  console.log("j", article);
   const { id } = useParams();
-  console.log("b");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // if (trigger === 0) {
+    dispatch(fetchArticle(id)); // PBpartA
+    // dispatch(fetchNewsInfo());
+    // }
+  }, []);
+  useEffect(() => {
+    return () => {
+      dispatch(clearNewsArticle()); // PBpart
+
+      // Anything in here is fired on component unmount.
+    };
+  }, []);
 
   // const articles = useSelector((store) => store.news.news);
-  const article = data.articles.find((e) => e.id == id);
+  // const article = data.articles.find((e) => e.id == id);
   console.log(article);
   // const scroll = useSelector((store) => store.global.scroll);
 
@@ -70,7 +86,9 @@ const ShowArticle = (props) => {
                 </div>
                 <div className="brief">
                   <h3>Brief</h3>
-                  <p className="paragraph">{article.brief}</p>
+                  <p className="paragraph">
+                    {article.summary || article.abstract}
+                  </p>
                 </div>
                 <Document
                   file={url}

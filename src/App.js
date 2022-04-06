@@ -10,19 +10,23 @@ import ArticlesList from "./containers/Articles/ArticlesList";
 import ShowArticle from "./containers/ArticleView/ShowArticle";
 import Home from "./containers/Home/Home";
 import Navbar from "./containers/Navbar/Navbar";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/articles/:id" element={<ShowArticle />} />
-          <Route exact path="/articles" element={<ArticlesList />} />
-        </Routes>
-      </div>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/articles/:id" element={<ShowArticle />} />
+            <Route exact path="/articles" element={<ArticlesList />} />
+          </Routes>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
