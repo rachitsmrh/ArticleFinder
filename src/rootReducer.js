@@ -35,6 +35,7 @@ import history from "./utilis/history";
 const rootReducer = combineReducers({
   router: connectRouter(history),
   articles: articlesReducer,
+
   // global: globalReducer,
 });
 
