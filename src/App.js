@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import ArticlesList from "./containers/Articles/ArticlesList";
 import ShowArticle from "./containers/ArticleView/ShowArticle";
+import ShowArticle from "./containers/ArticleView/ReadArticle";
 import Home from "./containers/Home/Home";
 import Navbar from "./containers/Navbar/Navbar";
 import { Provider } from "react-redux";
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/articles/:id" element={<ShowArticle />} />
             <Route exact path="/articles" element={<ArticlesList />} />
+            <Route path="/readarticle/:id" element={<ReadArticle />} />
           </Routes>
         </div>
       </Router>

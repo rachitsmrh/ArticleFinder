@@ -37,13 +37,6 @@ const ShowArticle = (props) => {
     // dispatch(fetchNewsInfo());
     // }
   }, []);
-  useEffect(() => {
-    return () => {
-      dispatch(clearNewsArticle()); // PBpart
-
-      // Anything in here is fired on component unmount.
-    };
-  }, []);
 
   // const articles = useSelector((store) => store.news.news);
   // const article = data.articles.find((e) => e.id == id);
@@ -92,33 +85,7 @@ const ShowArticle = (props) => {
                     {article.summary || article.abstract}
                   </p>
                   <p className="article_title standard">{article.title}</p>
-                  <p>{`https://cors-anywhere.herokuapp.com/https://link.springer.com/content/pdf/${article.identifier}.pdf`}</p>
                 </div>
-                {/* <object
-                  data={`https://link.springer.com/content/pdf/${article.identifier}`}
-                  type="application/pdf"
-                  width="100%"
-                  height="100%"
-                >
-                  <p>
-                    Alternative text - include a link <a href="">to the PDF!</a>
-                  </p>
-                </object> */}
-                <Document
-                  file={`https://cors-anywhere.herokuapp.com/https://link.springer.com/content/pdf/${article.identifier}.pdf`}
-                  options={{
-                    workerSrc: "/pdf.worker.js",
-                  }}
-                  crossorigin="anonymous"
-                  httpHeaders={{
-                    "X-Requested-With": XMLHttpRequest,
-                    "X-CustomHeader": "40359820958024350238508234",
-                  }}
-                >
-                  {Array.from(new Array(numPages), (el, index) => (
-                    <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-                  ))}
-                </Document>
               </div>
             </div>
           ) : (
