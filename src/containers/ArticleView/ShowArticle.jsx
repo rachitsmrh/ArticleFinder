@@ -86,6 +86,11 @@ const ShowArticle = (props) => {
                   </p>
                   <p className="article_title standard">{article.title}</p>
                 </div>
+                <Link to={`/readarticle${article._id}`}>
+                  <Button variant="contained" color="primary">
+                    View Article
+                  </Button>
+                </Link>
               </div>
             </div>
           ) : (
