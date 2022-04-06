@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import data from "../../components/data/Articles.json";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
 
 import { Link } from "react-router-dom";
 
@@ -24,6 +24,8 @@ import { useSelector, useDispatch } from "react-redux";
 // import ArticleTable from './components/ArticleTable';
 
 const ShowArticle = (props) => {
+  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
   const article = useSelector((store) => store.articles.article);
 
   console.log("j", article);
@@ -48,7 +50,7 @@ const ShowArticle = (props) => {
   console.log(article);
   // const scroll = useSelector((store) => store.global.scroll);
 
-  const url = `https://link.springer.com/content/pdf/${doi}`;
+  const url = `https://link.springer.com/content/pdf/${article.doi}`;
 
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
@@ -89,17 +91,26 @@ const ShowArticle = (props) => {
                   <p className="paragraph">
                     {article.summary || article.abstract}
                   </p>
+                  <p>{`https://link.springer.com/content/pdf/${article.identifier}`}</p>
                 </div>
+                {/* <object
+                  data={`https://link.springer.com/content/pdf/${article.identifier}`}
+                  type="application/pdf"
+                  width="100%"
+                  height="100%"
+                >
+                  <p>
+                    Alternative text - include a link <a href="">to the PDF!</a>
+                  </p>
+                </object> */}
                 <Document
-                  file={url}
-                  options={{ workerSrc: "/pdf.worker.js" }}
+                  file={`https://cors-anywhere.herokuapp.com/http://link.springer.com/content/pdf/${article.identifier}`}
                   onLoadSuccess={onDocumentLoadSuccess}
                 >
                   {Array.from(new Array(numPages), (el, index) => (
                     <Page key={`page_${index + 1}`} pageNumber={index + 1} />
                   ))}
                 </Document>
-                <Article news={article}></Article>
               </div>
             </div>
           ) : (

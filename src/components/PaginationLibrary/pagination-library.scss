@@ -1,0 +1,43 @@
+@import 'src/assets/css/_colors.scss';
+@import 'src/assets/css/_mixins.scss';
+
+#root {
+  .pagination-library {
+    margin: 5px auto 0px 15px;
+    .MuiToolbar-gutters {
+      padding-left: 10px;
+      @include small-laptop {
+        padding-left: 20px;
+      }
+      .MuiTypography-body2 {
+        font-size: 0.7rem;
+        @include small-laptop {
+          font-size: 1rem;
+        }
+      }
+      .MuiTablePagination-selectRoot {
+        margin: 0 5px;
+        font-size: 0.7rem;
+        @include small-laptop {
+          font-size: 1rem;
+          margin: 0 30px 0 5px;
+        }
+      }
+      .MuiTablePagination-actions {
+        .MuiIconButton-root {
+          padding: 5px;
+          @include small-laptop {
+            padding: 15px;
+          }
+          .MuiSvgIcon-root {
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+    @include small-laptop {
+      grid-area: pagination;
+      margin: 10px auto 10px 0;
+    }
+  }
+}

@@ -11,8 +11,13 @@ import {
 
 export function* fetchArticlesSaga(action) {
   const store = yield select();
-
-  const uri = `/api/articles`;
+  const {
+    payload: { rowsPerPage, query },
+  } = action;
+  let uri = `/api/articles`;
+  if (query) {
+    uri += `?${query}`;
+  }
   // const {
   //   data: { article },
   // } = yield call(fetchGet, uri);

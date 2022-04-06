@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 export const initialState = {
   articles: [],
   article: {},
+  page: 0,
+  rowsPerPage: 10,
+  sideFilter: "",
 };
 
 const articleslistSlice = createSlice({
@@ -11,6 +14,18 @@ const articleslistSlice = createSlice({
   reducers: {
     fetchArticles() {},
     fetchArticle() {},
+    updatedsideFilter(state, action) {
+      const { payload } = action;
+      state.sideFilter = payload;
+    },
+    updatePage(state, action) {
+      const { payload } = action;
+      state.page = payload;
+    },
+    updateRowsPerPage(state, action) {
+      const { payload } = action;
+      state.rowsPerPage = payload;
+    },
 
     updateAppData(state, action) {
       const { payload } = action;
@@ -36,6 +51,9 @@ export const {
   clearAllData,
   fetchArticle,
   clearNewsArticle,
+  updatePage,
+  updateRowsPerPage,
+  updatedsideFilter,
 } = articleslistSlice.actions;
 
 export default articleslistSlice.reducer;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 // import "./Login.scss";
 
@@ -30,9 +31,11 @@ const Home = () => {
               A online library where you can find articles easily and save your
               time by reading its summary.
             </h1>
-            <Button variant="contained" color="primary">
-              Get Started
-            </Button>
+            <Link to="/articles">
+              <Button variant="contained" color="primary">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="home__image__container">
