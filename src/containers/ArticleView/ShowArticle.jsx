@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import data from "../../components/data/Articles.json";
+import { Document, Page } from "react-pdf";
 
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,28 @@ const ShowArticle = (props) => {
   console.log(article);
   // const scroll = useSelector((store) => store.global.scroll);
 
+  const url = `https://link.springer.com/content/pdf/${doi}`;
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }
+
+  // function changePage(offset) {
+  //   setPageNumber(prevPageNumber => prevPageNumber + offset);
+  // }
+
+  // function previousPage() {
+  //   changePage(-1);
+  // }
+
+  // function nextPage() {
+  //   changePage(1);
+  // }
+
   return (
     <>
       <ArticleContainer>
@@ -49,6 +72,15 @@ const ShowArticle = (props) => {
                   <h3>Brief</h3>
                   <p className="paragraph">{article.brief}</p>
                 </div>
+                <Document
+                  file={url}
+                  options={{ workerSrc: "/pdf.worker.js" }}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                >
+                  {Array.from(new Array(numPages), (el, index) => (
+                    <Page key={`page_${index + 1}`} pageNumber={index + 1} />
+                  ))}
+                </Document>
                 <Article news={article}></Article>
               </div>
             </div>
@@ -73,3 +105,28 @@ const ShowArticle = (props) => {
 };
 
 export default ShowArticle;
+
+{
+  /*       <Document
+          file={pdf}
+          options={{ workerSrc: "/pdf.worker.js" }}
+          onLoadSuccess={onDocumentLoadSuccess}
+          >
+          <Page pageNumber={pageNumber} />
+          </Document>
+          <div>
+          <p>
+            Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
+          </p>
+          <button type="button" disabled={pageNumber <= 1} onClick={previousPage}>
+            Previous
+          </button>
+          <button
+            type="button"
+            disabled={pageNumber >= numPages}
+            onClick={nextPage}
+          >
+            Next
+          </button>
+          </div>  */
+}
