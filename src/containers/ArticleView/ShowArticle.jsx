@@ -91,7 +91,8 @@ const ShowArticle = (props) => {
                   <p className="paragraph">
                     {article.summary || article.abstract}
                   </p>
-                  <p>{`https://link.springer.com/content/pdf/${article.identifier}`}</p>
+                  <p className="article_title standard">{article.title}</p>
+                  <p>{`https://cors-anywhere.herokuapp.com/https://link.springer.com/content/pdf/${article.identifier}.pdf`}</p>
                 </div>
                 {/* <object
                   data={`https://link.springer.com/content/pdf/${article.identifier}`}
@@ -104,8 +105,15 @@ const ShowArticle = (props) => {
                   </p>
                 </object> */}
                 <Document
-                  file={`https://cors-anywhere.herokuapp.com/http://link.springer.com/content/pdf/${article.identifier}`}
-                  onLoadSuccess={onDocumentLoadSuccess}
+                  file={`https://cors-anywhere.herokuapp.com/https://link.springer.com/content/pdf/${article.identifier}.pdf`}
+                  options={{
+                    workerSrc: "/pdf.worker.js",
+                  }}
+                  crossorigin="anonymous"
+                  httpHeaders={{
+                    "X-Requested-With": XMLHttpRequest,
+                    "X-CustomHeader": "40359820958024350238508234",
+                  }}
                 >
                   {Array.from(new Array(numPages), (el, index) => (
                     <Page key={`page_${index + 1}`} pageNumber={index + 1} />
